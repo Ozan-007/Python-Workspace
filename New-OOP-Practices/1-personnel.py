@@ -8,8 +8,8 @@ class Personnel:
     def get_full_name(self):
         return f'{self.first_name} {self.last_name}'
     
-    def get_full_name(variable):
-        return f'{variable.first_name} {variable.last_name}'
+    # def get_full_name(variable):
+    #     return f'{variable.first_name} {variable.last_name}'
 
 
 per1 = Personnel("John","Smith",4000)
