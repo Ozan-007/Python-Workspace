@@ -23,22 +23,64 @@ class Personnel:
         old_rate = cls.increase_rate
         cls.increase_rate = rate
         print(f'Old rate is ({old_rate}) and new rate is {Personnel.increase_rate}')
-        
+
+    @classmethod # constructor method
+    def fix_string(cls,developer): #cls represents the class which it is inside of.
+        first_name,last_name,salary = developer.split("-")
+        return cls(first_name,last_name,salary)
 
 per_1 = Personnel("Kobe", "Bryant", 45000)
 per_2 = Personnel("Stephen", "Curry", 51000)
 
-Personnel.change_increase_rate(1.5) # Like this we are able to change the Personnel's increase_rate and it will affect other objects that created from Personnel.
 
-per_1.increase_salary()
-per_2.increase_salary()
+# Creating new Object with @classmethod, string manipulated splitted as first_name,last_name,salary and created new object from Personnel class and returned later assigned to a new variable for a new object with a new name
 
-print(per_1.salary)
-print(per_2.salary)
-per_1.change_increase_rate(2) # We can change increase_rate of the class with using an object that created from the class. It is going to affect all of the objects simply because we changed the rate of the class.
-  
-per_1.increase_salary()
-per_2.increase_salary()
-print("________________________")
-print(per_1.salary)
-print(per_2.salary)
+dev_1 = 'Tom-Cruise-5500'
+dev_2 = 'James-Bond-7007'
+dev_3 = 'Adam-Smith-8000'
+
+new_dev_1 = Personnel.fix_string(dev_1)
+
+print(new_dev_1)
+
+
+# print(Personnel.fix_string(dev_1).__dict__) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#CHANGE RATE EXAMPLE
+
+
+# Personnel.change_increase_rate(1.5) # Like this we are able to change the Personnel's increase_rate and it will affect other objects that created from Personnel.
+
+# per_1.increase_salary()
+# per_2.increase_salary()
+
+# print(per_1.salary)
+# print(per_2.salary)
+# per_1.change_increase_rate(2) # We can change increase_rate of the class with using an object that created from the class. It is going to affect all of the objects simply because we changed the rate of the class.
+
+# per_1.increase_salary()
+# per_2.increase_salary()
+# print("________________________")
+# print(per_1.salary)
+# print(per_2.salary)
+
+
+# EXAMPLE ENDED
