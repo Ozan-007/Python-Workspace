@@ -29,23 +29,44 @@ class Personnel:
         first_name,last_name,salary = developer.split("-")
         return cls(first_name,last_name,salary)
 
+    @staticmethod
+    def is_weekday(date):
+        if date.weekday() == 5 or date.weekday() == 6:
+            return "weekend"
+        else:
+            return "weekday"
+
+
 per_1 = Personnel("Kobe", "Bryant", 45000)
 per_2 = Personnel("Stephen", "Curry", 51000)
 
 
+# EXAMPLE STARTED
+# Static method means that we do not need anything from an object or from the class.
+
+import datetime
+date = datetime.date(2022,1,4)
+print(Personnel.is_weekday(date))
+
+
+# ENDED
+
+# EXAMPLE STARTED
+
 # Creating new Object with @classmethod, string manipulated splitted as first_name,last_name,salary and created new object from Personnel class and returned later assigned to a new variable for a new object with a new name
 
-dev_1 = 'Tom-Cruise-5500'
-dev_2 = 'James-Bond-7007'
-dev_3 = 'Adam-Smith-8000'
+# dev_1 = 'Tom-Cruise-5500'
+# dev_2 = 'James-Bond-7007'
+# dev_3 = 'Adam-Smith-8000'
 
-new_dev_1 = Personnel.fix_string(dev_1)
+# new_dev_1 = Personnel.fix_string(dev_1)
 
-print(new_dev_1)
-
+# print(new_dev_1)
 
 # print(Personnel.fix_string(dev_1).__dict__) 
 
+
+# ENDED
 
 
 
