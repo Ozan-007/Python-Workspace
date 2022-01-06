@@ -62,13 +62,42 @@ class Manager(Personnel):
 
 
     def personnel_list(self):
-        for num,person in enumerate(self.personnels):
-            num += 1 
-            return num, person
+        for e,person in enumerate(self.personnels):
+            e += 1 
+            print(e, person.get_full_name()) 
+
+
+# Creating manager adding personnel and removing
 
 man = Manager("Ozan","Eski",8000)
+man.add_personnel(dev_1)
+man.add_personnel(dev_2)
+# print(man.get_full_name())
+# print("___________________")
+# man.personnel_list()
+# print("___________________")
+# man.remove_personnel(dev_2)
+# man.personnel_list()
 
-man.add_personnel(dev_1.__dict__)
 
-print(man.personnel_list())
-# print(man.__dict__)
+
+#Extra 
+# isinstance()
+
+# print(isinstance(dev_1,Manager))
+# print(isinstance(dev_1,Developer))
+# print(isinstance(dev_1,Personnel))
+# print(isinstance(man,Personnel))
+# print(isinstance(man,Manager))
+# print(isinstance(man,Developer))
+# print(isinstance(123,str))
+# print(isinstance(123,int))
+
+# issubclass()
+
+print(issubclass(Developer,Personnel))
+print(issubclass(Manager,Personnel))
+print(issubclass(Manager,Developer))
+
+
+
