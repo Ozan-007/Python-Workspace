@@ -24,16 +24,31 @@ class Personnel:
         
     def __str__(self): # This method will return us name and mail when the object is called.
         return f"{self.first_name} -  {self.email})"  # ** This method is for final users.**
-        
+
+    def __add__(self, other):
+        return self.salary + other.salary
+    
+
 
 per_1 = Personnel("Kobe", "Bryant", 45000)
 per_2 = Personnel("Stephen", "Curry", 51000)
 
-print(per_2)
+# print(per_2)
 # print(per_2.__repr__())
 # print(per_2.__str__())
 # print(str(per_2))
 # print(repr(per_2))
 
+# They are the same. Let's manipulate __add__ method in int class
+
+# print(("1" + str(1) +'2'))
+# print((1 + 21) / 2)
+print(int.__add__(1,10))
+# print(int.__add__(12,15))
+
+# so if 1 + 3 is the same as int.__add__(1,3)
+#We can simply use it in our class and we can change the __add__ method and use it as per_1 + per_2. With that we give our method 2 variables and their salary values.
+print(per_2.__add__(per_1))
+print(per_2 + per_1)
 
 
