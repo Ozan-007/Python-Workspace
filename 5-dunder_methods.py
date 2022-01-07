@@ -28,7 +28,12 @@ class Personnel:
     def __add__(self, other):
         return self.salary + other.salary
     
+    def __sub__(self,other):
+        return self.salary - other.salary
 
+    def __len__(self):
+        return len(self.get_full_name()) - 1
+    
 
 per_1 = Personnel("Kobe", "Bryant", 45000)
 per_2 = Personnel("Stephen", "Curry", 51000)
@@ -43,12 +48,26 @@ per_2 = Personnel("Stephen", "Curry", 51000)
 
 # print(("1" + str(1) +'2'))
 # print((1 + 21) / 2)
-print(int.__add__(1,10))
+# print(int.__add__(1,10))
 # print(int.__add__(12,15))
 
 # so if 1 + 3 is the same as int.__add__(1,3)
 #We can simply use it in our class and we can change the __add__ method and use it as per_1 + per_2. With that we give our method 2 variables and their salary values.
-print(per_2.__add__(per_1))
-print(per_2 + per_1)
+# print(per_2.__add__(per_1))
+# print(Personnel.__add__(per_1,per_2))
+# print(Personnel.__sub__(per_1,per_2))
+# print(per_2 + per_1)
+
+#***  Subtraction ****
+
+# print(int.__sub__(per_2,per_1))
+# print(per_1 - per_2)
+
+#simply we changed + - with manipulating __add and __sub__ methods. 
 
 
+# *** len **
+
+print(len("Eski"))
+print("Eski".__len__())
+print(len(per_2))
