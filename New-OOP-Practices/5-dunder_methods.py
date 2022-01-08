@@ -68,6 +68,14 @@ per_2 = Personnel("Stephen", "Curry", 51000)
 
 # *** len **
 
-print(len("Eski"))
-print("Eski".__len__())
-print(len(per_2))
+print(int.__add__(1,3))
+# print(int.__add__(per_1,per_2)) # Error
+print(Personnel.__add__(per_1,per_2))
+print(per_1.__add__(per_2))
+print(Personnel.__sub__(per_2,per_1))
+print(per_2 + per_1)
+print(per_2 - per_1)
+# print(len("Eski"))
+# print(len(per_1))
+# print("Eski".__len__())
+# print("Ozan".__len__())
