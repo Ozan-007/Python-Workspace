@@ -13,20 +13,31 @@ class Personnel:
     def email(self):
         return f'{self.first_name.lower()}.{self.last_name.lower()}@firm.com'
 
-    @get_full_name.setter
+    @get_full_name.setter # allows us to assign full_name and change values according to full_name
     def get_full_name(self, full_name):
         first_name,last_name = full_name.split(" ")
         self.first_name = first_name
         self.last_name = last_name
- 
+  
+    @get_full_name.deleter # Allows us to delete our values inside of our object.
+    def get_full_name(self):
+        print("Variables deleted")
+        self.first_name = None
+        self.last_name = None
+
+
 
 per1 = Personnel("John","Smith",4000)
 per2 = Personnel(salary = 5000, first_name = "Ozan", last_name = "Eski")
 
-per1.get_full_name = "Idris Bond"
-print(per1.email)
+# ***Setter
+# per1.get_full_name = "Idris Bond"
+# print(per1.email)
+# print(per1.first_name)
+# print(per1.get_full_name)
+
+
+# ***Deleter
+del per1.get_full_name
+
 print(per1.first_name)
-print(per1.get_full_name)
-
-
-# print(per1.email())
